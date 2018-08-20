@@ -8,6 +8,7 @@ print()
 the_number = random.randint(0, 100)
 guess = -1
 
+pring
 name = input('Player what is your name? ')
 
 while guess != the_number:
