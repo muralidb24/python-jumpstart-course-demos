@@ -21,9 +21,10 @@ while playagain :
         else:
             print ("Great job!")
             gameover = True
-    yesno = input ("Play again? : ")
+    yesno = input ("That was fun!. Want to play again? [yes/no]: ")
     yesno = yesno.strip()
     yesno: str = yesno.lower()
-    print ("the lower case answer is : {}",yesno)
+    print()
+
     if (yesno == "no"):
         playagain = False
