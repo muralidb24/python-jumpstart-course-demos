@@ -23,6 +23,9 @@ while playagain :
             gameover = True
     yesno = input ("That was fun!. Want to play again? [yes/no]: ")
     yesno = yesno.strip()
+    if not (yesno) :
+        print ("You have to enter yes or no. Assuming 'no'. good bye")
+        yesno = "no"
     yesno: str = yesno.lower()
     print()
 
