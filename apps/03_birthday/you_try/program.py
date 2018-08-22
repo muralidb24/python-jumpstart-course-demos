@@ -10,7 +10,9 @@ day  = input ("What date were you born in ? ")
 
 
 birthdate = datetime.date(int(year),int(month),int(day))
-currentbirthdate = datetime.date(2018, int(month), int(day))
+now = datetime.datetime.now()
+thisyear = now.year
+currentbirthdate = datetime.date(thisyear, int(month), int(day))
 currentdate = datetime.date.today()
 delta =  currentdate - currentbirthdate
 if (delta.days < 0) :
