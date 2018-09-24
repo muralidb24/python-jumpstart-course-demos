@@ -1,37 +1,37 @@
-
-journal = []  # Journal
+import journal
 
 def printheader():
     print('------ Journal App -------')
 
-def listentries():
-    for entry in journal:
-        print (entry)
+def listentries(entries):
+    entries.reverse()
+    for (idx, entry) in enumerate(entries):
+        print ("Entry {} is {}".format(idx+1,entry))
 
-def addentry():
-    entry = input ("What do you want to add to your journal? ")
-    journal.append(entry)
+def addentry(journalM):
+    entry = input ('what do you want to add to your journal? ')
+    journalM.append(entry)
 
 
 def eventloop():
+    journalM = journal.load()
     while (True):
         print('What do you want to do?')
         cmd = input('(L)ist, (A)dd, E(x)it ? ')
         cmd = cmd.strip()
         cmd = cmd.lower()
         if (cmd == 'l'):
-            listentries()
+            listentries(journalM)
         elif (cmd == 'a'):
-            addentry()
+            addentry(journalM)
         elif (cmd == 'x'):
             print ('Thank you for using the Journal App!')
             break
         else:
             print("Sorry, didn't understand that")
-
+    journal.save(journalM)
 def main():
     printheader()
-    listentries()
     eventloop()
 
 if __name__ == "__main__":
